@@ -1,0 +1,8 @@
+junk/
+ebin
+*.d
+.erlang.mk
+deps
+*.plt
+logs
+test/*.beam

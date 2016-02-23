@@ -1,0 +1,2 @@
+-define(WORKER(ID),            {ID, {ID, start_link, []}, permanent, 5000, worker, [ID]}).
+-define(WORKER(ID, Mod, Args), {ID, {Mod, start_link, Args}, permanent, 5000, worker, [ID]}).

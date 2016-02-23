@@ -1,0 +1,39 @@
+{application, cowolg, [
+    {description, "Access logs for cowboy"},
+    {vsn, "git"},
+    {id, "git"},
+    {modules, []},
+    {registered, []},
+    {applications, [
+        kernel,
+        stdlib
+    ]},
+    {mod, {cowolg_app, []}},
+    {env, [
+        {filters, [
+            {accepted_headers, [
+                "accept",
+                "accept-charset",
+                "accept-encoding",
+                "accept-language",
+                "cache-control",
+                "connection",
+                "date",
+                "host",
+                "referer",
+                "user-agent",
+                "x-forwarded-for"
+            ]},
+            {accepted_qs_vals, []}
+        ]},
+
+        {worker, [
+            {bucket_size, 100}
+        ]},
+
+        {flusher, [
+            {tcp_host, "localhost"},
+            {tcp_port, 1234}
+        ]}
+    ]}
+]}.
